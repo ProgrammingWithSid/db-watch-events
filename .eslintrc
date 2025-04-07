@@ -1,0 +1,106 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "tsconfig.json",
+      "sourceType": "module",
+      "ecmaVersion": 2020
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "import",
+      "prettier",
+      "jest",
+      "security",
+      "promise",
+      "sonarjs"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:@typescript-eslint/strict",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:prettier/recommended",
+      "plugin:jest/recommended",
+      "plugin:security/recommended",
+      "plugin:promise/recommended",
+      "plugin:sonarjs/recommended"
+    ],
+    "env": {
+      "node": true,
+      "jest": true,
+      "es2020": true
+    },
+    "ignorePatterns": [
+      "dist",
+      "node_modules",
+      "coverage",
+      "*.js"
+    ],
+    "rules": {
+      // TypeScript specific rules
+      "@typescript-eslint/explicit-function-return-type": "error",
+      "@typescript-eslint/explicit-module-boundary-types": "error",
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "@typescript-eslint/no-floating-promises": "error",
+      "@typescript-eslint/no-misused-promises": "error",
+      "@typescript-eslint/await-thenable": "error",
+      "@typescript-eslint/no-unnecessary-type-assertion": "error",
+      "@typescript-eslint/prefer-as-const": "error",
+      "@typescript-eslint/no-non-null-assertion": "error",
+      "@typescript-eslint/prefer-nullish-coalescing": "error",
+      "@typescript-eslint/prefer-optional-chain": "error",
+      "@typescript-eslint/unbound-method": "error",
+      "@typescript-eslint/no-unsafe-assignment": "error",
+      "@typescript-eslint/no-unsafe-call": "error",
+      "@typescript-eslint/no-unsafe-member-access": "error",
+  
+      // Code quality rules
+      "max-len": ["error", { "code": 120, "ignoreUrls": true, "ignoreStrings": true }],
+      "no-console": ["warn", { "allow": ["warn", "error"] }],
+      "no-duplicate-imports": "error",
+      "no-var": "error",
+      "prefer-const": "error",
+      "no-param-reassign": "error",
+      "no-return-await": "error",
+      "no-throw-literal": "error",
+      "prefer-promise-reject-errors": "error",
+      "sonarjs/no-duplicate-string": ["error", { "threshold": 3 }],
+      "sonarjs/cognitive-complexity": ["error", 15],
+  
+      // Import rules
+      "import/first": "error",
+      "import/no-duplicates": "error",
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            ["builtin", "external"],
+            "internal",
+            ["parent", "sibling", "index"]
+          ],
+          "newlines-between": "always",
+          "alphabetize": { "order": "asc", "caseInsensitive": true }
+        }
+      ],
+  
+      // Security rules
+      "security/detect-object-injection": "warn",
+      "security/detect-non-literal-regexp": "warn",
+      "security/detect-possible-timing-attacks": "warn",
+  
+      // Promise rules
+      "promise/always-return": "warn",
+      "promise/catch-or-return": "error",
+      "promise/no-nesting": "warn"
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+  }
