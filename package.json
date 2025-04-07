@@ -27,7 +27,11 @@
   ],
   "author": "Dev Satender",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/db-change-notifier#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProgrammingWithSid/db-watch-events.git"
+  },
+  "homepage": "https://github.com/ProgrammingWithSid/db-watch-events#readme",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -35,7 +39,6 @@
     "express": "^5.1.0",
     "pg": "^8.14.1",
     "socket.io": "^4.8.1",
-    "typescript": "^5.8.3",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
