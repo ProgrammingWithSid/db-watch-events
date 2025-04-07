@@ -1,6 +1,6 @@
 {
   "name": "db-change-notifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A flexible, lightweight database change notification library that enables real-time delivery of database changes to your applications.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
